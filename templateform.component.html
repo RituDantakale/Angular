@@ -1,0 +1,53 @@
+
+    <div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6 text-left rounded shadow py-5" id="frame">
+      <form #myForm="ngForm" (ngSubmit)="OnSubmit(myForm.value)">
+        <div>
+            <h3>Register</h3>
+        </div>
+        <div class="form-group">
+          <label for="firstname">
+          Firstname
+          </label>
+          <input type="text" class="form-control" id="firstname" name="firstname" ngModel placeholder="Enter firstname"  required>
+        </div>
+        <div class="form-group">
+          <label for="lastname">
+            Lastname
+          </label>
+          <input type="text" class="form-control" id="lastname" name="lastname" ngModel placeholder="Enter lastname"  required>
+        </div>
+        <div class="form-group">
+          <label for="">Course </label>
+          <select class="form-control">
+            <option *ngFor="let cour of courseList">{{cour}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="">E-mail</label>
+          <input type="text" class="form-control" id="email" name="email" ngModel placeholder="Enter Email"  required>
+        </div>
+        <div class="form-group">
+          <label>Phone</label>
+          <input type="text" class="form-control " id="phone" name="phone" ngModel placeholder="999-999-9999"
+            data-content="Must be a valid phone number (999-999-9999)"  required>
+        </div>
+
+        <div class="form-group">
+         <label>Password</label>
+         <input type="password" class="form-control" id="pass" name="pass" ngModel placeholder="Password" required>
+        </div>
+
+        <div class="form-group">
+            <label >City</label>
+           <input type="city" class="form-control" id="city" name="city" ngModel placeholder="city" required>
+        </div>
+
+        <button type="submit" class="btn btn-success mt-2" [disabled]="!myForm.valid">Submit</button>
+
+        <button type="reset" class=" btn btn-danger mt-2" style="margin-left: 30px;"> Reset</button>
+      </form>
+    </div>
+  </div>
+</div>
